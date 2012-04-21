@@ -1,0 +1,66 @@
+ // responsive design
+ //
+ // @author             Michael Schulze
+ // @version            $1.1$
+ // @copyright          Michael Schulze, 18 February, 2012
+ // @license            GNU General Public License, version 3 (GPL-3.0)
+ //
+ // @package            yaml,compass,sass
+ // @-yaml-minver       4.0.1
+ // @-sass-minver       2.0
+ // @-compass-minver    0.12.0
+ //
+ // @lastmodified       $Date: 2012-02-18 22:32:33 +0100 (Sat, 18 Feb 2012) $
+
+/* activate max-width of media elements for browsers that support media queries */
+@media only screen and (min-width: 0px) {
+  img
+  ,embed
+  ,object
+  ,video {
+    max-width: 100%;
+  }
+  
+  .ym-wrapper {
+    width: auto;
+    min-width: 300px;
+    max-width: 60em;
+  }
+}
+
+@media only screen and (min-width: 1280px) {
+
+}
+
+@media only screen and (max-width: 980px) {
+
+}
+
+@media only screen and (max-width: 768px) {
+
+}
+
+@media only screen and (max-width: 520px) {
+
+}
+   
+@media only screen and (max-width: 480px) {
+
+}
+
+/**
+ * Device width
+ *
+ */
+@media only screen and (max-device-width: 768px) {
+
+}
+
+@media only screen and (max-device-width: 480px) {
+
+}
+
+/* for devices with retina display */
+@media only screen and (max-device-width: 480px) and (-webkit-min-device-pixel-ratio: 2) {
+
+}

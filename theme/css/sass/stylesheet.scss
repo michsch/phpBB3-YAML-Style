@@ -1,0 +1,49 @@
+// main stylesheet to import other css files or mixins and define some vars
+//
+// @author             Michael Schulze
+// @version            $1.1$
+// @copyright          Copyright 2005-2012, Dirk Jesse,
+//                     Michael Schulze, 18 February, 2012
+// @license            CC-BY 2.0 (http://creativecommons.org/licenses/by/2.0/),
+//                     YAML-CDL (http://www.yaml.de/license.html)
+//
+// @package            yaml,compass,sass
+// @-yaml-minver       4.0.1
+// @-sass-minver       2.0
+// @-compass-minver    0.12.0
+//
+// @lastmodified       $Date: 2012-03-30 14:02:54 +0200 (Fr., 30 Mär 2012) $
+
+//@import "compass/css3";
+@import "mixin/css3";
+
+// import core styles
+@import "yaml/full"; // import all
+
+// yaml modules
+//@import "yaml/normalize";
+//@import "yaml/float";
+//@import "yaml/accessibility";
+//@import "yaml/column";
+//@import "yaml/grid";
+//@import "yaml/forms";
+
+// import mixins
+@import "mixin/sizes";
+@import "mixin/helper";
+
+// import config file with colors and other vars
+@import "config";
+
+// import fonts
+@import "module/fonts";
+
+// modules
+@import "module/nav";
+@import "module/screen";
+@import "module/content";
+@import "module/plugins";
+@import "module/forms";
+@import "module/responsive";
+@import "module/fancybox";
+@import "module/print";

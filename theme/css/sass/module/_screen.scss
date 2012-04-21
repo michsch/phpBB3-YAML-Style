@@ -1,0 +1,72 @@
+/**
+ * default screen stylesheet
+ *
+ * @author             Michael Schulze
+ * @version            $1.0$
+ * @copyright          Copyright 2005-2012, Dirk Jesse,
+ *                     Michael Schulze, 18 February, 2012
+ * @license            CC-BY 2.0 (http://creativecommons.org/licenses/by/2.0/),
+ *                     YAML-CDL (http://www.yaml.de/license.html)
+ *
+ * @package            yaml,compass,sass
+ * @-yaml-minver       4.0
+ * @-sass-minver       2.0
+ * @-compass-minver    0.11.6
+ *
+ * @lastmodified       $Date: 2012-02-18 19:37:45 +0100 (Sat, 18 Feb 2012) $
+ */
+
+@media screen, projection
+{
+
+  /* force vertical scrollbar */
+  body { overflow-y:scroll; }
+
+  /* Body background */
+  body {
+    background: #fff;
+  }
+
+  /* Layout Module Configuration */
+  .ym-wrapper { width: 960px; margin: 0 auto; }
+  .ym-wbox { padding: 20px; }
+
+  /* fallback for media queries */
+
+  /* Basic Element Styling */
+  #header { margin: 0 0 2em; }
+  #topnav {  }
+
+  #main { margin: 0 0 2em; }
+
+  #footer {
+    padding: 1em 0 0;
+    border-top: 1px $c-text solid;
+  }
+  
+  #main > .ym-grid > div > .ym-gbox { padding: 0 20px; }
+  #main > .ym-grid > div > .ym-gbox-left { padding: 0 20px 0 0; }
+  #main > .ym-grid > div > .ym-gbox-right { padding: 0 0 0 20px; }
+
+  /* Column-Set Configuration: 1-3 (sidebar left) */
+  .ym-col1 {  }
+  .ym-col1 .ym-cbox {  }
+
+  .ym-col2 {  }
+  .ym-col2 .ym-cbox {  }
+
+  .ym-col3 {  }
+  .ym-col3 .ym-cbox {  }
+  
+  /* Skiplinks */
+  .ym-skiplinks { height: 24px; width: #222; }
+
+  .ym-skiplinks a.ym-skip:focus,
+  .ym-skiplinks a.ym-skip:active { 
+  	color:#fff; 
+  	background:#333; 
+  	border-bottom:1px #000 solid;
+  	padding:10px 0;
+  	text-decoration:none;
+  }  
+}

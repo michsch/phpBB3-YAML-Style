@@ -1,0 +1,187 @@
+/**
+ * navigation stylesheet
+ *
+ * @author             Michael Schulze
+ * @version            $1.0$
+ * @copyright          Copyright 2005-2012, Dirk Jesse,
+ *                     Michael Schulze, 18 February, 2012
+ * @license            CC-BY 2.0 (http://creativecommons.org/licenses/by/2.0/),
+ *                     YAML-CDL (http://www.yaml.de/license.html)
+ *
+ * @package            yaml,compass,sass
+ * @-yaml-minver       4.0
+ * @-sass-minver       2.0
+ * @-compass-minver    0.11.6
+ *
+ * @lastmodified       $Date: 2012-02-18 18:40:07 +0100 (Sat, 18 Feb 2012) $
+ */
+
+@media screen, projection {
+  /**
+  * global nav definitions
+  *
+  */
+  .nav ul li
+  ,nav ul li { list-style-type: none; }
+  
+  /**
+   * "Yet Another Multicolumn Layout" - YAML CSS Framework
+   *
+   * (en) Horizontal list navigation "hlist"
+   * (de) Horizontale Navigationsliste "hlist"
+   *
+   * @copyright       Copyright 2005-2012, Dirk Jesse
+   * @license         CC-BY 2.0 (http://creativecommons.org/licenses/by/2.0/),
+   *                  YAML-CDL (http://www.yaml.de/license.html)
+   * @link            http://www.yaml.de
+   * @package         yaml
+   * @version         v4.0
+   * @revision        $Revision: 686 $
+   * @lastmodified    $Date: 2012-01-22 13:09:37 +0100 (So, 22 Jan 2012) $
+   */
+  .ym-hlist {
+		/* (en) containing floats in IE */
+		/* (de) Einfassen der Floats im IE */
+		width: 100%;
+		overflow: hidden;
+		/* (en|de) Bugfix:IE - collapsing horizontal margins */
+		position:relative;
+		/* (en) Repeat the main color from the image */
+		/* (de) Wiederholung der Hauptfarbe aus der Bilddatei */
+		line-height: 1em;
+	}
+	.ym-hlist ul
+	,.ym-hlist ul li {
+		margin: 0;
+		padding: 0;
+		/* (en|de) Bugfix:IE - Doubled Float Margin Bug */
+		display: inline;
+		float: left; /* LTR */
+	}
+	.ym-hlist ul
+	,.ym-hlist ul li
+	,.ym-hlist ul li a { background: none 0; }
+	.ym-hlist ul li {
+		font-size: 1.0em;
+		line-height: 1em;
+		list-style-type: none;
+	}
+	.ym-hlist ul li a,
+	.ym-hlist ul li strong {
+		display: block;
+		position: relative;
+		width: auto;
+		padding: 0 1em;
+		font-size: 1em;
+		line-height: 2em;
+		overflow: hidden;
+	}
+
+  /**
+   * "Yet Another Multicolumn Layout" - YAML CSS Framework
+   *
+   * (en) Vertical list navigation "vlist"
+   * (de) Vertikale Navigationsliste "vlist"
+   *
+   * @copyright       Copyright 2005-2012, Dirk Jesse
+   * @license         CC-BY 2.0 (http://creativecommons.org/licenses/by/2.0/),
+   *                  YAML-CDL (http://www.yaml.de/license.html)
+   * @link            http://www.yaml.de
+   * @package         yaml
+   * @version         v4.0
+   * @revision        $Revision: 686 $
+   * @lastmodified    $Date: 2012-01-22 13:09:37 +0100 (So, 22 Jan 2012) $
+   */
+  /* title */
+	h6.ym-vlist,
+	.ym-vlist h6 {
+		font-weight: bold;
+		font-size: 100%;
+		width: 90%;
+		padding:3px 0px 3px 10%; /* LTR */
+		margin: 0;
+	}
+	.ym-vlist ul {
+		width:100%;
+		margin: 0 0 1.5em 0;
+		padding: 0;
+		list-style-type: none;
+		overflow: hidden;
+	}
+	.ym-vlist ul li ul  {
+		margin: 0;
+	}
+	.ym-vlist ul li {
+		float:left; /* LTR */
+		width:100%;
+		margin:0;
+		padding:0;
+	}
+	.ym-vlist ul li a
+	,.ym-vlist ul li strong
+	,.ym-vlist ul li span {
+		display: block;
+		padding: 3px 0px 3px 10%;
+		text-decoration: none;
+	}
+	.ym-vlist ul li a,
+	,.ym-vlist ul li a:visited {
+		/* color:#444; */
+	}
+	.ym-vlist li span {
+		display: block;
+	}
+
+	/* active list element */
+	.ym-vlist li.active {
+		color:#fff;
+		background-color:#444;
+	}
+	.ym-vlist li.active strong {
+		font-weight:bold;
+	}
+
+	/* Level 1 */
+	.ym-vlist li a,
+	.ym-vlist li strong,
+	.ym-vlist li span { width:90%; padding-left:10%; } /* LTR */
+
+	.ym-vlist li a:focus,
+	.ym-vlist li a:hover,
+	.vlist li a:active { background-color:#888; color:#fff; outline: 0 none; }
+
+	/* Level 2 */
+	.ym-vlist li ul li a,
+	.ym-vlist li ul li strong,
+	.ym-vlist li ul li span { width:80%; padding-left:20%; } /* LTR */
+
+	.ym-vlist li ul li a,
+	.ym-vlist li ul li a:visited { background-color:#f8f8f8; color:#333; }
+	.ym-vlist li ul li a:focus,
+	.ym-vlist li ul li a:hover,
+	.ym-vlist li ul li a:active { background-color:#888; color:#fff; }
+
+	/* Level 3 */
+	.ym-vlist li ul li ul li a,
+	.ym-vlist li ul li ul li strong,
+	.ym-vlist li ul li ul li span { width:70%; padding-left:30%; } /* LTR */
+
+	.ym-vlist li ul li ul li a,
+	.ym-vlist li ul li ul li a:visited{ background-color:#f0f0f0; color:#222; }
+	.ym-vlist li ul li ul li a:focus,
+	.ym-vlist li ul li ul li a:hover,
+	.ym-vlist li ul li ul li a:active { background-color:#888; color:#fff; }
+
+	/* Level 4 */
+	.ym-vlist li ul li ul li ul li a,
+	.ym-vlist li ul li ul li ul li strong,
+	.ym-vlist li ul li ul li ul li span { width:60%; padding-left:40%; } /* LTR */
+
+	.ym-vlist li ul li ul li ul li a,
+	.ym-vlist li ul li ul li ul li a:visited { background-color:#e8e8e8; color:#111; }
+	.ym-vlist li ul li ul li ul li a:focus,
+	.ym-vlist li ul li ul li ul li a:hover,
+	.ym-vlist li ul li ul li ul li a:active { background-color:#888; color:#fff; }
+	
+	/* add your navigation definitions here */
+}

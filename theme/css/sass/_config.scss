@@ -1,0 +1,39 @@
+// SASS config file with vars
+//
+// @author             Michael Schulze
+// @version            $1.0$
+// @copyright          Michael Schulze, 30 March, 2012
+// @license            CC-BY 2.0 (http://creativecommons.org/licenses/by/2.0/),
+//                     YAML-CDL (http://www.yaml.de/license.html)
+//
+// @package            yaml,compass,sass
+// @-yaml-minver       4.0.1
+// @-sass-minver       2.0
+// @-compass-minver    0.12.0
+//
+// @lastmodified       $Date: 2012-03-30 15:08:24 +0200 (Fri, 30 Mar 2012) $
+
+// colors
+$c-bodybg: #ffffff;
+$c-white: #ffffff;
+$c-lila: #5e0952;
+$c-beige: #97874b;
+
+$c-text: #222;
+$c-text-link: #4D87C7;
+$c-text-link-hover: #4D87C7;
+$c-text-link-focus: #4D87C7;
+$c-text-link-visited: #4D87C7;
+$c-crypt: #ffffff; /* same as background color because that's the color of the additional dots in email addresses for spam protection (see setup.ts -> config) */
+
+/**
+ * font size & line height
+ *
+ * !do not delete because this is needed in mixin/sizes
+ */
+$font-size-body-px: 14;
+$line-height-px: 21;
+
+/* calculate font-size (in %) and line-height (in em) */
+$font-size-body: $font-size-body-px / 16 * 100%;
+$line-height: em($line-height-px, $font-size-body-px);

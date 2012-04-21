@@ -1,0 +1,29 @@
+/**
+ * patch stylesheet for IE <= 8
+ *
+ * @author             Michael Schulze
+ * @version            $1.0$
+ * @copyright          Michael Schulze, 18 February, 2012
+ * @license            GNU General Public License, version 3 (GPL-3.0)
+ *
+ * @package            yaml,compass,sass
+ * @-yaml-minver       4.0.1
+ * @-sass-minver       2.0
+ * @-compass-minver    0.11.6
+ *
+ * @lastmodified       $Date: 2012-02-18 18:25:40 +0100 (Sat, 18 Feb 2012) $
+ */
+@media screen, projection {
+  /* line 21, css/sass/patch_lte_ie8.scss */
+  img
+  , embed
+  , object
+  , video {
+    width: 100%;
+    height: auto;
+  }
+
+  /*
+  p img { width: 400px; }
+  */
+}

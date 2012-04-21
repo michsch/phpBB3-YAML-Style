@@ -1,0 +1,79 @@
+ // "Yet Another Multicolumn Layout" - YAML CSS Framework
+ //
+ // (en) YAML core stylesheet
+ // (de) YAML Basis-Stylesheet
+ //
+ // Don't make any changes in this file!
+ // Your changes should be placed in any css-file in your own stylesheet folder.
+ //
+ // @copyright       Copyright 2005-2012, Dirk Jesse
+ // @license         CC-BY 2.0 (http://creativecommons.org/licenses/by/2.0/),
+ //                  YAML-CDL (http://www.yaml.de/license.html)
+ // @link            http://www.yaml.de
+ // @package         yaml
+ // @version         v4.0.1
+ // @revision        $Revision: 726 $
+ // @lastmodified    $Date: 2012-03-03 12:21:50 +0100 (Sa, 03 Mrz 2012) $
+
+@media all {
+	/**
+	* @section Accessibility Module
+	*
+	* (en) skip links and hidden content
+	* (de) Skip-Links und versteckte Inhalte
+	*/
+
+	/* (en) classes for invisible elements in the base layout */
+	/* (de) Klassen für unsichtbare Elemente im Basislayout */
+	.ym-skip,
+	.ym-hideme,
+	.ym-print {
+		position:absolute;
+		top:-32768px;
+		left:-32768px; /* LTR */
+	}
+
+	/* (en) make skip links visible when using tab navigation */
+	/* (de) Skip-Links für Tab-Navigation sichtbar schalten */
+	.ym-skip:focus,
+	.ym-skip:active {
+		position:static;
+		top:0;
+		left:0;
+	}
+
+	/* skiplinks:technical setup */
+	.ym-skiplinks {
+		position:absolute;
+		top:0px;
+		left:-32768px;
+		z-index:1000;
+		width:100%;
+		margin:0;
+		padding:0;
+		list-style-type:none;
+	}
+
+	.ym-skiplinks .ym-skip:focus,
+	.ym-skiplinks .ym-skip:active {
+		left:32768px;
+		outline:0 none;
+		position:absolute;
+		width:100%;
+	}
+}
+
+@media print {
+  /* (en) make .ym-print class visible */
+	/* (de) .ym-print-Klasse sichtbar schalten */
+	.ym-print {
+		position:static;
+		left:0;
+	}
+
+	/* (en) generic class to hide elements for print */
+	/* (de) Allgemeine CSS Klasse, um beliebige Elemente in der Druckausgabe auszublenden */
+	.ym-noprint {
+		display:none !important;
+	}
+}

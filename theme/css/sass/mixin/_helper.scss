@@ -1,0 +1,23 @@
+// helper mixins
+//
+// @author             Michael Schulze
+// @version            $1.0$
+// @copyright          Michael Schulze, 30 March, 2012
+// @license            @license            CC-BY 2.0 (http://creativecommons.org/licenses/by/2.0/),
+//                     YAML-CDL (http://www.yaml.de/license.html)
+//
+// @package            yaml,compass,sass
+// @-yaml-minver       4.0.1
+// @-sass-minver       2.0
+// @-compass-minver    0.12.0
+//
+// @lastmodified       $Date: 2012-03-30 15:09:36 +0200 (Fri, 30 Mar 2012) $
+
+@mixin image-replace() {
+  border: 0;
+  font: 0/0 a;
+  text-shadow: none;
+  color: transparent;
+  background-color: transparent;
+}
+

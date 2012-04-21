@@ -1,0 +1,547 @@
+/**
+ * typography stylesheet for the content (no print-styles here)
+ *
+ * @author             Michael Schulze
+ * @version            $1.0$
+ * @copyright          Copyright 2005-2012, Dirk Jesse,
+ *                     Michael Schulze, 18 February, 2012
+ * @license            CC-BY 2.0 (http://creativecommons.org/licenses/by/2.0/),
+ *                     YAML-CDL (http://www.yaml.de/license.html)
+ *
+ * @package            yaml,compass,sass
+ * @-yaml-minver       4.0
+ * @-sass-minver       2.0
+ * @-compass-minver    0.11.6
+ *
+ * @lastmodified       $Date: 2012-02-18 18:27:39 +0100 (Sat, 18 Feb 2012) $
+ */
+
+@media all {
+
+	/**
+	* @section global typography settings
+	*
+	* vertical rhythm settings (based on em-unit)
+	* -------------------------------------------
+	* basefont-size: 14px (87.5%)
+	* line-height  : 21px (factor: 1.5)
+	*/
+
+	/* (en) reset font size for all elements to standard (16 Pixel) */
+	/* (de) Alle Schriftgrößen auf Standardgröße (16 Pixel) zurücksetzen */
+	html * { font-size:100%; }
+
+	/**
+	* (en) reset monospaced elements to font size 16px in all browsers
+	* (de) Schriftgröße von monospaced Elemente in allen Browsern auf 16 Pixel setzen
+	*
+	* @see: http://webkit.org/blog/67/strange-medium/
+	*/
+
+	textarea,
+	pre,
+	code,
+	kbd,
+	samp,
+	var,
+	tt {
+		font-family:Consolas, "Lucida Console", "Andale Mono", "Bitstream Vera Sans Mono", "Courier New", Courier;
+	}
+
+	/* (en) base layout gets standard font size 14px */
+	/* (de) Basis-Layout erhält Standardschriftgröße von 14 Pixeln */
+	body {
+		//font-family: Arial, Helvetica, sans-serif;
+		font-family: "Droid Serif", Georgia, "Times New Roman", Times, serif;
+		font-size: $font-size-body;
+		color: $c-text;
+
+		/* (en) Prevent auto-scaling of text in mobile webkit browsers */
+		/* (en) Automatische Schriftvergrößerung in mobilen Webkit-Browsern vermeiden */
+		-webkit-text-size-adjust:100%;
+	}
+
+  /*--- Headings | Überschriften ------------------------------------------------------------------------*/
+  
+  h1,
+	h2,
+	h3,
+	h4,
+	h5,
+	h6 {
+		font-family: "Droid Serif", Georgia, "Times New Roman", Times, serif;
+		font-weight: normal;
+		color: #161e21;
+		margin: 0;
+	}
+
+  h1 {
+    @include headline(49,42);
+  }
+  h2 {
+    @include headline(42,42);
+  }
+  h3 { 
+    @include headline(25,21);
+  }
+  h4 {
+    @include headline(19,21);
+  }
+  h5 {
+    @include headline(16,21);
+  }
+  h6 {
+    @include headline(14,21);
+    font-weight: 700;
+  }
+
+  h4, h5, h6 { color: #8B8F90; }
+
+	/* --- Lists | Listen  -------------------------------------------------------------------------------- */
+
+	ul,
+	ol,
+	dl {
+		font-size: 1em;
+		line-height: $line-height;
+		margin: $line-height 0 0 1em;
+	}
+
+	ul {
+		list-style-type: disc;
+	}
+
+	ol {
+		list-style-type: decimal;
+	}
+
+	ul ul {
+		list-style-type: circle;
+		margin-top: 0;
+	}
+
+	ol ol {
+		list-style-type: lower-latin;
+		margin-top: 0;
+	}
+
+	ol ul {
+		list-style-type: circle;
+		margin-top: 0;
+	}
+
+	li {
+		font-size: 1em;
+		line-height: $line-height;;
+		margin-left: 0.8em;
+	}
+
+	dt { font-weight:bold; }
+
+	dd { margin:0 0 1.5em 0.8em; }
+
+	/* --- general text formatting | Allgemeine Textauszeichnung ------------------------------------------ */
+
+	p {
+		font-size:1em;
+		line-height:$line-height;
+		margin: $line-height 0 0 0;
+	}
+
+	blockquote, cite, q {
+		font-family: Georgia, "Times New Roman", Times, serif;
+		font-style:italic;
+	}
+
+	blockquote {
+		margin:$line-height 0 0 $line-height;
+		color:#666;
+	}
+
+	strong, b { font-weight:bold; }
+
+	em, i { font-style:italic; }
+
+	big {
+		@include font-size(16);
+	}
+
+	small {
+		@include font-size(12);
+	}
+
+	pre,
+	code,
+	kbd,
+	tt,
+	samp,
+	var {
+		font-size:100%;
+	}
+
+	pre {
+		line-height:$line-height;
+		margin: $line-height 0 0 0;
+		white-space: pre;
+		white-space: pre-wrap;
+		word-wrap: break-word;
+	}
+	pre, code { color:#800; }
+
+	kbd, samp, var, tt {
+		color:#666;
+		font-weight:bold;
+	}
+
+	var, dfn { font-style:italic; }
+
+	acronym, abbr {
+		border-bottom:1px #aaa dotted;
+		font-variant:small-caps;
+		letter-spacing:.07em;
+		cursor:help;
+	}
+
+	sub,
+	sup {
+		@include font-size(11);
+		line-height: 0;
+		position: relative;
+		vertical-align: baseline;
+	}
+
+	sup { top: -0.5em; }
+	sub { bottom: -0.25em; }
+
+	mark {
+		background: #ff0;
+		color: #000;
+	}
+
+	hr {
+		color:#fff;
+		background:transparent;
+		margin:0 0 ($line-height / 2) 0;
+		padding:0 0 ($line-height / 2) 0;
+		border:0;
+		border-bottom:1px #eee solid;
+	}
+
+	/* Class for additional email dots */
+	.crypt { color: $c-crypt; font-size: 1px; }
+
+  /*--- Links ----------------------------------------------------------------------------------------- */
+
+  a {
+		color: $c-text-link;
+		background:transparent;
+		text-decoration:none;
+		&:active { outline: none; }
+
+		&:focus,
+		&:hover {
+		  text-decoration:underline;
+		  color: $c-text-link-focus;
+		  background: #fff;
+		  outline: 0 none;
+		}
+	}
+
+	/* --- images ------------------ */
+
+	img,
+	figure {
+		margin: 0;
+	}
+
+	.flexible {
+		margin-top: $line-height;
+		max-width: 100%;
+	}
+	img.flexible { display: block; }
+
+	* html .flexible {	/* IE6 support */
+		width: 98%;		/* 2% space for borders */
+	}
+
+	.bordered {
+		margin-top: em(17,14);
+		border: 2px #eee solid;
+		border: 2px rgba(255,255,255,1) solid;
+		@include box-shadow(0 0 3px rgba(0,0,0,.25));
+	}
+
+  figure {
+	  display: block;
+	  width: auto;
+	  padding: $line-height / 2;
+	  margin-top: $line-height;
+	  background: #fff;
+	  @include border-radius(.2em);
+	}
+
+  /* figure display */
+	figure.table {
+	  display: table;
+	  width: 1px;
+	  //max-width: 50%;
+	}
+	figure.table img
+	,figure.table img.flexible {
+	  max-width: inherit;
+	}
+  figure.inline-block {
+    display: inline-block;
+    width: auto;
+    /* IE7 bugfix inline-block */
+	  zoom: 1;
+	  *display: inline;
+	  /* IE6 bugfix inline-block */
+	  _height: 250px;
+  }
+	
+	figure img
+	,figure img.flexible {
+	  display: block;
+	  margin: 0;
+	  width: auto;
+	  height: auto;
+	  max-width: 100%;
+	  //padding-bottom: $line-height;
+	}
+	
+	figure img
+	,figure img.flexible
+	,figure figcaption {
+	  //display: table-row;
+	}
+
+	figure figcaption {
+	  padding: em(10,14) $line-height em(11,14) $line-height;
+	  line-height: $line-height;
+	  background: #efefef;
+	  @include border-radius(0 0 .2em .2em);
+	}
+
+	figure.bordered {
+	  /* 1px more margin because of 10px padding and we need 21px for getting the original line height */
+	  margin-top: em(18,14);
+	}
+
+	figure.transparent { background: transparent; }
+	figure.no-padding { padding: 0; }
+	figure.shadow {
+	  @include box-shadow(0 0 10px rgba(0,0,0,0.3));
+	}
+
+  /*
+  h2:before {
+    clear:both;
+		content:".";
+		display:block;
+		font-size:0;
+		height:0;
+		visibility:hidden;
+  }
+  */
+
+	/**
+	* ----------------------------------------------------------------------- #
+	*
+	* Generic Content Classes
+	*
+	* (en) standard classes for positioning and highlighting
+	* (de) Standardklassen zur Positionierung und Hervorhebung
+	*
+	* @section content-generic-classes
+	*/
+	.indent {
+	  margin-left: 2em;
+	}
+
+	.box {
+		border-radius: 0.3em;
+		border-width: 1px;
+		border-style: solid;
+		border-color: #888;
+		border-color: rgba(0,0,0,.3);
+		-webkit-box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2) inset;
+		-moz-box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2) inset;
+		box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2) inset;
+		color: #444;
+		color: rgba(0,0,0,.8);
+		padding: em(20,14);
+		margin: em(21,14) 0 0 0;
+	}
+
+	.box > *:first-child {
+		margin-top: 0;
+	}
+
+	.label {
+		font-family: Verdana, Geneva, sans-serif;
+		padding: 1px 6px 2px;
+		display: inline-block;
+		vertical-align:middle;
+		letter-spacing: normal;
+		white-space:nowrap;
+		-webkit-border-radius: 3px;
+		-moz-border-radius: 3px;
+		border-radius: 3px;
+		background: #06C;
+		color: #fff;
+		font-size: 10px;
+		line-height: 12px;
+	}
+
+	.info {
+		background:#f4f4f4;
+	}
+	.success {
+		background:#8c8;
+	}
+	.warning {
+		background:#cc8;
+	}
+	.error {
+		background:#c88;
+	}
+	
+	.highlight {
+		color:#c30;
+	}
+	.dimmed {
+		color:#888;
+	}
+	
+	.cartogothic {
+	  font-family: 'CartoGothicStd', Arial, Helvetica, sans-serif;
+	  p, h1, h2, h3, h4, h5, h6 {
+	    font-family: 'CartoGothicStd', Arial, Helvetica, sans-serif;
+	  }
+	}
+
+	.float-left {
+		float:left;
+		display:inline;
+		margin: 1.5em 1em 0 0;
+	}
+
+	.float-right {
+		float:right;
+		display:inline;
+		margin: 1.5em 0 0 1em;
+	}
+
+	.center {
+		display:block;
+		text-align:center;
+		margin: 1.5em auto 0 auto;
+	}
+
+	/**
+	* ------------------------------------------------------------------------------------------------- #
+	*
+	* Tables | Tabellen
+	*
+	* (en) Generic classes for table-width and design definition
+	* (de) Generische Klassen für die Tabellenbreite und Gestaltungsvorschriften für Tabellen
+	*
+	* @section content-tables
+	*/
+
+	table {
+		width:100%;
+		border-collapse:collapse;
+		margin: 1.3571em 0 0 0;
+		color:#333;
+		border-top: 1px #ccc solid;
+		border-bottom: 1px #ccc solid;
+	}
+
+	table.narrow {
+		margin:  em(19,14) 0 0 0;
+	}
+
+	table.narrow th,
+	table.narrow td {
+		padding: 0 0.5em;
+		line-height: em(20,14);
+	}
+
+	table.bordertable {
+		border:1px #ccc solid;
+	}
+
+	table caption {
+		font-variant:small-caps;
+	}
+
+	th, td {
+		line-height: 1.5em;
+		vertical-align: top;
+		padding: 0.7143em 0.5em;
+	}
+
+	th *:first-child,
+	td *:first-child {
+		margin-top: 0;
+	}
+
+	th.nowrap,
+	td.nowrap {
+		white-space: nowrap;
+	}
+
+	thead th {
+		text-align: left;
+		color:#000;
+		border-bottom:2px #000 solid;
+	}
+
+	.bordertable thead th {
+		background:#e0e0e0;
+		border-right:1px #ccc solid;
+		border-bottom:1px #ccc solid;
+	}
+
+	.bordertable tbody th[scope="row"] {
+		background:#f0f0f0;
+	}
+
+	tbody th {
+		text-align: left;
+		border-top:1px solid #ccc;
+		text-align:left;
+	}
+
+	.bordertable tbody th {
+		border-right:1px solid #ccc;
+	}
+
+	tbody td {
+		text-align: left;
+		border-top:1px solid #ccc;
+	}
+	
+	.boxshadow table.narrow th
+	,.boxshadow table.narrow td {
+	  line-height: $line-height;
+	  border: 0 none;
+	  @include box-shadow(0 -1px 0 0 #ccc);
+	}
+	.boxshadow table.narrow tbody tr:first-child th
+	,.boxshadow table.narrow tbody tr:first-child td {
+	  @include box-shadow(0 0 0 0 #fff);
+	}
+
+	.bordertable tbody td {
+		border-right:1px solid #ccc;
+	}
+
+	/* highlight row on mouse over */
+	tbody tr:hover th,
+	tbody tr:hover td {
+		background:#f8f8f8;
+	}
+}

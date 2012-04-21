@@ -1,0 +1,71 @@
+// mixins for SASS to use in all css files
+//
+// @author             Michael Schulze
+// @version            $1.1$
+// @copyright          Michael Schulze, 18 February, 2012
+// @license            GNU General Public License, version 3 (GPL-3.0)
+//
+// @package            yaml,compass,sass
+// @-yaml-minver       4.0.1
+// @-sass-minver       2.0
+// @-compass-minver    0.12.0
+//
+// @lastmodified       $Date: 2012-03-30 14:31:53 +0200 (Fr., 30 Mär 2012) $
+
+// ---- font size calulactions -----------------------------------------------------------------
+
+// Reset the global font size to the given value.
+// Helpful if the font size should change in different responsive views.
+//
+// @param integer new global font size in px
+// @return string new font size var and stylesheet for body
+@mixin refont($px) {
+  $font-size-body-px: $px;
+  $font-size-body: $font-size-body-px / 16 * 100%;
+  body { font-size: $font-size-body; }
+}
+
+// Calculates em so it could be used everywhere.
+//
+// @param integer font size in pixel
+// @param integer in pixel
+// @return string em
+@function em($px: $line-height-px, $font-size: $font-size-body-px) {
+  @return $px / $font-size * 1em;
+}
+
+// Calculates percent so it could be used everywhere.
+//
+// @param integer pixel
+// @param integer reference pixel
+// @return string em
+@function pc($px: $line-height-px, $standard: $font-size-body-px) {
+  @return $px / $standard * 100%;
+}
+
+// Creates the font size in %
+//
+// @param integer font size in px
+// @param integer font-size of parent element in px (if empty than it's the global font size)
+// @return string css font-size with calculated % value
+@mixin font-size($px, $standard: $font-size-body-px) {
+  font-size: pc($px,$standard);
+}
+
+// Prints the line-height as stylesheet-attribute in em like
+// line-height: 1.5em;
+//
+// @param integer font size in pixel
+// @param integer line-height in pixel
+// @return string line height
+@mixin line-height($line-height: $line-height-px, $font-size: $font-size-body-px) {
+  line-height: em($line-height, $font-size);
+}
+
+// ---- headline calulactions -----------------------------------------------------------------
+
+@mixin headline($font-size: $font-size-body-px, $line-height: $line-height-px, $margin-top: $line-height-px) {
+  @include font-size($font-size);
+  @include line-height($line-height,$font-size);
+  margin-top: em($margin-top,$font-size);
+}
